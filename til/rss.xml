@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LaySent's Blog]]></title><description><![CDATA[Site where LaySent writes thoughts.]]></description><link>https://laysent.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 27 Jun 2019 13:05:49 GMT</lastBuildDate><item><title><![CDATA[Submit Button outside Form]]></title><link>https://laysent.github.io/til/2019/06#2019-06-27</link><guid isPermaLink="false">https://laysent.github.io/til/2019/06#2019-06-27</guid><pubDate>Thu, 27 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在一个表单中敲击回车按钮，默认会触发 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; 的 submit 事件。当 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; 里面有 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;&lt;/code&gt; 按钮的时候，敲击回车会先触发 &lt;code class=&quot;language-text&quot;&gt;button&lt;/code&gt; 的 click 事件，再触发 &lt;code class=&quot;language-text&quot;&gt;form&lt;/code&gt; 的 submit 事件。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LaySent's Blog]]></title><description><![CDATA[Site where LaySent writes thoughts.]]></description><link>https://laysent.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 30 Jun 2019 15:05:17 GMT</lastBuildDate><item><title><![CDATA[Draw Math Equation]]></title><link>https://laysent.github.io/til/2019/06#2019-06-30</link><guid isPermaLink="false">https://laysent.github.io/til/2019/06#2019-06-30</guid><pubDate>Sun, 30 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://www.desmos.com/calculator&quot;&gt;desmos&lt;/a&gt; 是一个在线的网站，可以用于绘制数学表达式对应的函数图像。&lt;/p&gt;
+&lt;p&gt;生成的结果可以通过链接分享，也可以生成 PNG 格式的图片下载到本地。&lt;/p&gt;
+&lt;p&gt;以下是一个例子：&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8e68ad8bbebf7e4cb6b0be8fc408023d/8ff1e/2019-06-30-desmos-graph.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAACmklEQVQ4y41U2W7TQBTN/38C4qWAStNstPACEryCQKSqVJoFozTx1ixOHK/jJT3cO/ZYk1IED1ee8dx75tzlTCvPc+iWpimKhwd4377C6pzBvhjg+vkz3PU6sGnvDb+jBJAmCbIsQ1kUSNIM1jpAQesWg/ABmwQkx5wC/NsfsM7P4L69wLx7jjsym0D98RgFnScx+eUZgQmYqwCpEDiU5V8AywMiy4Td78K5fFMBdtpwBj1EroP8cEAmUsQJga0ZLENBsQ3DxynndCDCEPagD5dSXhAzCUjgIopQHkpExNBc7SGISFFUpEpmKIgqg7DxOo7jak9M3Q/vYRHL6ekr/CK7//SRfFICSzFzPAmaafEM2lLpKksISDBLasxGNqYNo/0axssT+NdXSKgc5tKXYDn5izqOyRw1RU+Zb+XCh7OZbMSi38OcQP35AtYukcHsI7S4JuU/mlKnzmuul/PuksBOYXS7MO/9pgFJfbGenWTIqLxQpoBl15jl7Q2MFycYfRnSfILmLj/202IP1P3Wfr8HWxAE0nzfR/UvQBSF2O18XH0ewl0uERNj5bvb7Y7i1Lo1nU5hWVZzYJom7W1ENDYbbwvDXGH804Dr2M2F/HUcR5r6xzYajaouK+qcPteGFSCyHPYmlDMZBlUWnJJKT9T101NmnKOmSONZZAXQ0KYkK9YqgzEDVTs2NXe6NV2uQHMZfKSAmnlU105vhgLUVdYoRY0Ag+kKSOoRsm0bnuc1zJSiWARKJUdK4ZqpNB8rgM11XdlVvXZSUdocNkqp3rPq1RB1DZUCVNH/J+Wmhvw4Vu9Z9WrojgpQjca/ACVDa109jkX9U9VIl+N2u30SUDwlPSmZWn5MWZ8t3nPgZDKRLNUc6n66dPn8Nwam94/N3nKrAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;desmos-graph&quot;
+        title=&quot;&quot;
+        src=&quot;/static/8e68ad8bbebf7e4cb6b0be8fc408023d/b9e4f/2019-06-30-desmos-graph.png&quot;
+        srcset=&quot;/static/8e68ad8bbebf7e4cb6b0be8fc408023d/cf440/2019-06-30-desmos-graph.png 148w,
+/static/8e68ad8bbebf7e4cb6b0be8fc408023d/d2d38/2019-06-30-desmos-graph.png 295w,
+/static/8e68ad8bbebf7e4cb6b0be8fc408023d/b9e4f/2019-06-30-desmos-graph.png 590w,
+/static/8e68ad8bbebf7e4cb6b0be8fc408023d/8ff1e/2019-06-30-desmos-graph.png 800w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;对应的在线观看地址：&lt;a href=&quot;https://www.desmos.com/calculator/zthodlfe0t&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Submit Button outside Form]]></title><link>https://laysent.github.io/til/2019/06#2019-06-27</link><guid isPermaLink="false">https://laysent.github.io/til/2019/06#2019-06-27</guid><pubDate>Thu, 27 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在一个表单中敲击回车按钮，默认会触发 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; 的 submit 事件。当 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; 里面有 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;&lt;/code&gt; 按钮的时候，敲击回车会先触发 &lt;code class=&quot;language-text&quot;&gt;button&lt;/code&gt; 的 click 事件，再触发 &lt;code class=&quot;language-text&quot;&gt;form&lt;/code&gt; 的 submit 事件。&lt;/p&gt;
 &lt;p&gt;因为有了这样的机制，在一个表单中，只要指定了 submit 按钮，那么不论是点击按钮还是直接按回车，都可以触发相同的 click 事件，达到同样的代码提交功能。这使得代码可以很容易的复用，不需要额外的工作量就可以让鼠标和键盘都能够方便的提交表单。&lt;/p&gt;
 &lt;p&gt;然而在实际开发的过程中，因为组件的划分，有时候不能做到 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;&lt;/code&gt; 放在 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; 中。HTML5 中，增加了 &lt;code class=&quot;language-text&quot;&gt;button&lt;/code&gt; 的 &lt;code class=&quot;language-text&quot;&gt;form&lt;/code&gt; 属性，可以用于关联表单和表单外的提交按钮。&lt;/p&gt;
 &lt;p&gt;举例如下：&lt;/p&gt;
