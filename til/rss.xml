@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LaySent's Blog]]></title><description><![CDATA[Site where LaySent writes thoughts.]]></description><link>https://laysent.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 02 Jul 2019 14:25:32 GMT</lastBuildDate><item><title><![CDATA[Array.from]]></title><link>https://laysent.github.io/til/2019/07#2019-07-02</link><guid isPermaLink="false">https://laysent.github.io/til/2019/07#2019-07-02</guid><pubDate>Tue, 02 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Array.from&lt;/code&gt; 是 JavaScript 中一个较新的 API，可以将一个类数组或可迭代对象转化成一个真正的数组。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LaySent's Blog]]></title><description><![CDATA[Site where LaySent writes thoughts.]]></description><link>https://laysent.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 03 Jul 2019 13:53:44 GMT</lastBuildDate><item><title><![CDATA[Command `tldr`]]></title><link>https://laysent.github.io/til/2019/07#2019-07-03</link><guid isPermaLink="false">https://laysent.github.io/til/2019/07#2019-07-03</guid><pubDate>Wed, 03 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;tldr&lt;/code&gt; 是一个社区维护的命令工具，可以用于输出某一个命令的说明文档。相比于 &lt;code class=&quot;language-text&quot;&gt;man&lt;/code&gt; 详尽的文档，&lt;code class=&quot;language-text&quot;&gt;tldr&lt;/code&gt; 更侧重于例子。通过具体的使用场景，介绍该命令一些常用的方法。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;tldr&lt;/code&gt; 相关的一些链接地址：&lt;a href=&quot;https://github.com/tldr-pages/tldr&quot;&gt;GitHub&lt;/a&gt;，&lt;a href=&quot;https://tldr.sh/&quot;&gt;官方网站&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;安装 &lt;code class=&quot;language-text&quot;&gt;tldr&lt;/code&gt; 可以使用 &lt;code class=&quot;language-text&quot;&gt;brew&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; tldr&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;比如，需要了解 &lt;code class=&quot;language-text&quot;&gt;tar&lt;/code&gt; 的使用方法，可以运行下面的命令：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;tldr &lt;span class=&quot;token function&quot;&gt;tar&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;运行的结果如下：&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/afb42628221addee006643b75e3c5988/04a72/2019-07-03-tldr-screenshot.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 74.28571428571428%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAABrklEQVQ4y5WTaVLrQAyEc554t2dfnUDgwf3v00+SYyoUAcKPrvEkVe2v1fLBBw/jNKZpwrFp0HXdF7Vte/f3ezo452CMxjiOmOcZfd+jIeOmbcSoub6Enx8xPtRa8f7+hsvlGW//XlFLgTUGgcitNXDW/o2QqVJyyDWinDLyVetzhQ8Oy7L80ZBmF6xCjB55zQjJI+QAR2ZMyIa3sR8yTN4gR4fTZRXKtCY4Z6GVkviKzubG7CfjA7frrN5EpiF7KckTqYsWnu5c2F7KbvadKc2QCB0RUsx6rogc2Vs8vZwxLRNmvTXf9d2m3wjZsBBZYcOnKrFjDZjUhMUsUDRf7Uheix4yTMEikSnPrp6LxGay3VDZ7eT7x0527felRJpZopipJBRqOhJtP/YYpgHjPIokvpo/Ed7OdZeUEqhlnhsTRtpHLoIpPVFvd9rHK6Gi+K44OXWgIrOFCQYmGrmLYTS0h1RMWQtRRlnolKMo0H5qSsCFcDn9QOSkj+dxkHOXfClcykokp8tJvhCOxjOcSMfjURb7Xry7kcdhRN+0GDp+84CB3ix/Npse/eR2/Qc7FNr+H6tgOQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;tldr command result&quot;
+        title=&quot;&quot;
+        src=&quot;/static/afb42628221addee006643b75e3c5988/b9e4f/2019-07-03-tldr-screenshot.png&quot;
+        srcset=&quot;/static/afb42628221addee006643b75e3c5988/cf440/2019-07-03-tldr-screenshot.png 148w,
+/static/afb42628221addee006643b75e3c5988/d2d38/2019-07-03-tldr-screenshot.png 295w,
+/static/afb42628221addee006643b75e3c5988/b9e4f/2019-07-03-tldr-screenshot.png 590w,
+/static/afb42628221addee006643b75e3c5988/04a72/2019-07-03-tldr-screenshot.png 840w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;注：&lt;code class=&quot;language-text&quot;&gt;tldr&lt;/code&gt; 的全称是 Too Long; Don’t Read。可以理解成“摘要”的意思。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Array.from]]></title><link>https://laysent.github.io/til/2019/07#2019-07-02</link><guid isPermaLink="false">https://laysent.github.io/til/2019/07#2019-07-02</guid><pubDate>Tue, 02 Jul 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Array.from&lt;/code&gt; 是 JavaScript 中一个较新的 API，可以将一个类数组或可迭代对象转化成一个真正的数组。&lt;/p&gt;
 &lt;p&gt;类数组（array-like）常见于 DOM API 中取到的数据，比如 &lt;code class=&quot;language-text&quot;&gt;.querySelectorAll&lt;/code&gt;。得到的结果有 &lt;code class=&quot;language-text&quot;&gt;.length&lt;/code&gt; 属性，也可以通过下标获取到数据，但是本身却不是一个数组，没有 &lt;code class=&quot;language-text&quot;&gt;Array.prototype&lt;/code&gt; 上的 API 可以直接用。&lt;/p&gt;
 &lt;p&gt;可迭代对象则是指那些定义了 &lt;code class=&quot;language-text&quot;&gt;Symbol.iterator&lt;/code&gt; 属性的对象。&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Array.from&lt;/code&gt; 可以将上述的两种对象直接转化成一个标准的数组：&lt;/p&gt;
