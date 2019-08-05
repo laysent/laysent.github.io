@@ -31,9 +31,9 @@
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>这里，Node.js 处理 HTTP 和 HTTPs 请求使用的模块是不相同的，因而需要根据链接地址的 protocol 进行按需索取。同时，如果是 3xx 的 HTTP 结果，则需要进行链接跳转。可以直接读取 headers 中的 <code class="language-text">location</code> 数据，找到下一步需要跳转到的位置。</p></div><hr/></article><article itemscope="" itemType="http://schema.org/BlogPosting"><h1 style="margin-bottom:0.4375rem">Bad owner or permissions</h1><p><small><time itemProp="datePublished" dateTime="2019-07-30">2019-07-30</time></small><small> • <!-- -->Bash</small><small><span itemscope="" itemType="http://schema.org/Person" itemProp="author"> • by <span itemProp="name">LaySent</span></span></small></p><div itemProp="articleBody"><p>在 Docker 中使用 SSH 的功能时，发现 SSH 报错：</p>
-<div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">Bad owner or permissions on ~/.ssh/config</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Bad owner or permissions on ~/.ssh/config</code></pre></div>
 <p>通过 <code class="language-text">ls -l</code> 查看 <code class="language-text">~/.ssh/config</code>，得到如下结果：</p>
-<div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">-rw------- 1 1000  1000   557 Jul 29 20:32 config</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">-rw------- 1 1000  1000   557 Jul 29 20:32 config</code></pre></div>
 <p>注意到给出的 User 和 Group 的值不是一个名字（如 <code class="language-text">root</code>），而是一个数字。这说明，文件所属的 User / Group 无法找到。</p>
 <p>可以通过如下的命令查看当前 <code class="language-text">root</code> 用户的 ID：</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">id</span> -u root <span class="token comment"># output => 0</span></code></pre></div>
@@ -44,7 +44,7 @@
 
 <span class="token keyword">const</span> <span class="token punctuation">{</span> TextArea <span class="token punctuation">}</span> <span class="token operator">=</span> Input<span class="token punctuation">;</span></code></pre></div>
 <p>Jest 会报错：</p>
-<div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">ReferenceError: Input is not defined
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ReferenceError: Input is not defined
 
   1 | import { Input } from &#39;ant-design&#39;;
   2 |
@@ -74,7 +74,7 @@
 <span class="token punctuation">}</span></code></pre></div>
 <p>如此一来，只有在 <code class="language-text">NODE_ENV</code> 为 <code class="language-text">production</code> 或 <code class="language-text">development</code> 的情况下，Babel 才会启用 <code class="language-text">babel-plugin-import</code> 这个转换插件。对于 Jest 来说，因为默认设置了环境变量 <code class="language-text">NODE_ENV</code> 为 <code class="language-text">test</code>，所以 Plugin 不会起效。</p>
 <p>这样造成的问题是 Jest 的运行速度会有所降低。</p></div><hr/></article><article itemscope="" itemType="http://schema.org/BlogPosting"><h1 style="margin-bottom:0.4375rem">SSH Host Config</h1><p><small><time itemProp="datePublished" dateTime="2019-07-28">2019-07-28</time></small><small> • <!-- -->Bash</small><small><span itemscope="" itemType="http://schema.org/Person" itemProp="author"> • by <span itemProp="name">LaySent</span></span></small></p><div itemProp="articleBody"><p>如果手上有多台设备在管理，SSH 的时候需要记住各个设备的 IP 地址、输入，总是很麻烦的。SSH 提供了配置文件的功能，可以为不同的 IP 设置别名，同时配置登陆需要用到的用户名和 RSA 私钥等。</p>
-<section><h2>配置方法</h2><p>修改 <code class="language-text">~/.ssh/config</code> 文件，增加每个设备对应的配置数据。举例如下：</p><div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">Host pi
+<section><h2>配置方法</h2><p>修改 <code class="language-text">~/.ssh/config</code> 文件，增加每个设备对应的配置数据。举例如下：</p><div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Host pi
     Hostname 192.168.xx.xx
     User pi
     IdentityFile ~/.ssh/id_pi_rsa</code></pre></div><p>这样就配置好了一个 Raspberry Pi 的别名。接下来，可以直接使用如下的命令来访问设备：</p><div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">ssh</span> pi</code></pre></div><p>除了 SSH 之外，SCP 也可以使用同样的配置。比如：</p><div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">scp</span> -r /local/path pi:/remote/path</code></pre></div></section></div><hr/></article><article itemscope="" itemType="http://schema.org/BlogPosting"><h1 style="margin-bottom:0.4375rem">Import Chunkname with Babel Plugin</h1><p><small><time itemProp="datePublished" dateTime="2019-07-26">2019-07-26</time></small><small> • <!-- -->JavaScript</small><small><span itemscope="" itemType="http://schema.org/Person" itemProp="author"> • by <span itemProp="name">LaySent</span></span></small></p><div itemProp="articleBody"><p>默认情况下，Webapck 会用 Chunk ID 为 <code class="language-text">import()</code> 产生的独立文件命名，最终的结果就是类似于 <code class="language-text">0.bundle.js</code> 这样的文件。这样的文件并不方便理解和管理，所以一般会使用 <code class="language-text">webpackChunkName</code> 这个注释来让 Webapck 使用更加有意义的命名。例子：</p>
@@ -158,7 +158,7 @@ module<span class="token punctuation">.</span><span class="token function-variab
 <li>导入 Docker CPG key</li>
 </ol><div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">curl</span> https://download.docker.com/linux/raspbian/gpg</code></pre></div><ol start="5">
 <li>设置 Docker Repo 地址</li>
-</ol><p>在 <code class="language-text">/etc/apt/sources.list</code> 中增加如下行：</p><div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">deb https://download.docker.com/linux/raspbian/ stretch stable</code></pre></div><ol start="6">
+</ol><p>在 <code class="language-text">/etc/apt/sources.list</code> 中增加如下行：</p><div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">deb https://download.docker.com/linux/raspbian/ stretch stable</code></pre></div><ol start="6">
 <li>更新系统</li>
 </ol><div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
 <span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade</code></pre></div><ol start="7">
