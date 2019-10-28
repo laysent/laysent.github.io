@@ -32,6 +32,7 @@
 <url> <loc>https://laysent.github.io/til/2019/07</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019/06</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019/05</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/2019-10-28_get-current-ip-address</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-10-24_noindex-&amp;-nofollow</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-10-23_webpack-file-limit-error</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-10-22_document-designmode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -156,9 +157,9 @@
 <url> <loc>https://laysent.github.io/til/2019-05-03_restore-source-map</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-05-02_webpack-dynamic-import</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-05-01_use-case-of-switch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/category/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/seo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/build</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://laysent.github.io/til/category/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/bash</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/electron</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/tool</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
