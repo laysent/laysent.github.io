@@ -33,6 +33,9 @@
 <url> <loc>https://laysent.github.io/til/2019/07</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019/06</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019/05</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/2019-11-21_export-variable-using-private-name</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/2019-11-20_progress-of-dd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/2019-11-19_clone-sd-card</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-11-18_ant-design-style-overwrite</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-11-17_stopimmediatepropagation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-11-15_devtools-of-devtools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -171,14 +174,14 @@
 <url> <loc>https://laysent.github.io/til/2019-05-03_restore-source-map</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-05-02_webpack-dynamic-import</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-05-01_use-case-of-switch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/category/typescript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/category/bash</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/chrome</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/node.js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://laysent.github.io/til/category/typescript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/css</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/seo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/build</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://laysent.github.io/til/category/bash</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/electron</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/tool</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/http</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
