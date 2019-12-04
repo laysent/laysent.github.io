@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I Learn (LaySent)]]></title><description><![CDATA[Site where LaySent writes thoughts.]]></description><link>https://laysent.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 03 Dec 2019 14:36:51 GMT</lastBuildDate><item><title><![CDATA[Cost of parsing JSON]]></title><link>https://laysent.github.iotil/2019/12#2019-122019-12-03</link><guid isPermaLink="false">https://laysent.github.iotil/2019/12#2019-122019-12-03</guid><pubDate>Tue, 03 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在 JavaScript 中，直接定义一个对象（Object），性能上不远如定义一个 &lt;code class=&quot;language-text&quot;&gt;JSON.parse()&lt;/code&gt; 的表达式。具体来说，下面的两行，&lt;code class=&quot;language-text&quot;&gt;JSON.parse&lt;/code&gt; 的表达式会有更好的性能表现：&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Things I Learn (LaySent)]]></title><description><![CDATA[Site where LaySent writes thoughts.]]></description><link>https://laysent.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 04 Dec 2019 14:21:07 GMT</lastBuildDate><item><title><![CDATA[Rendered Fonts]]></title><link>https://laysent.github.iotil/2019/12#2019-122019-12-04</link><guid isPermaLink="false">https://laysent.github.iotil/2019/12#2019-122019-12-04</guid><pubDate>Wed, 04 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;要知道一个网页中的文本，具体是使用什么字体渲染出来的，并不是非常简单的事情，可以有以下一些方案进行尝试。&lt;/p&gt;
+&lt;section&gt;&lt;h2&gt;getComputedStyle&lt;/h2&gt;&lt;p&gt;使用 &lt;code class=&quot;language-text&quot;&gt;window.getComputedStyle&lt;/code&gt; 属性获取对应元素的 &lt;code class=&quot;language-text&quot;&gt;font-family&lt;/code&gt; 字段。因为字体的设置一般是通过顶层配置，子元素继承的方式完成的，因此在大多数的元素上，并没有 &lt;code class=&quot;language-text&quot;&gt;font-family&lt;/code&gt; 设置。即使有，大概率也是通过 CSS 完成的，因此从 &lt;code class=&quot;language-text&quot;&gt;.style&lt;/code&gt; 或者 &lt;code class=&quot;language-text&quot;&gt;.attributeStyleMap&lt;/code&gt; 无法拿到需要的数据。&lt;code class=&quot;language-text&quot;&gt;getComputedStyle&lt;/code&gt; 可以获取当前元素上样式的最终计算值，因此即使字体实际来自于继承或者系统默认字体，都可以通过该 API 获取到。比如，在一个没有 CSS 设置的页面上，可以通过下面的代码知道具体使用的系统默认字体是什么：&lt;/p&gt;&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getComputedStyle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;body&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fontFamily&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// MacOS (Chrome): Times&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Windows (Chrome): Microsoft YaHei&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;非编程的方案，可以在 Chrome DevTools 中直接找到 Elements 下的 Computed 部分，查看实际使用的 CSS 属性值。注：如果 &lt;code class=&quot;language-text&quot;&gt;font-family&lt;/code&gt; 并没有被定义过，可以勾选 All 来查看系统默认的属性值。&lt;/p&gt;&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2f6b9b41cfadb16613696e96a940262e/cb0d3/2019-12-04-computed-style.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 130.95975232198143%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAABYlAAAWJQFJUiTwAAAD40lEQVRIx5WVi2/aVhjF+Uv336ybFjKSNMnWbR1dq6pb1ocqVVMndWuabqFZIh62IZSHedoY24BtwOAXZ9+9EAYk1VpLB/va3OPfvd/1uTHXddFut1EsFlEqlTAYDKB1VOQlAYW8CLlawXg0Qr3egCSJME0ThmHw84juO47Dxfr1ej3EuIGmodPpoKt1oOs6qi0TUrmNS7mDgtyF0u1B73b5i9lz1rHf73MT27ZhWRZvM8UajQYymQw3VDUDFxkRZ2kJqQsBTdVEvalAlPKQ5Srevy8in5egKHNjBjIcDrnplWKe52E6nXIZtgfN8qDbPp199IYBgsCH7/vwvIX8FVHfTcVw0xF59BMAMx9R4GEW+iRvTez+TUdsNpthKboRei5aJ0mkn+9C/uM79M9+gn6ahJFKwkzdo/M99E7vwkw/5f9f609aErIGh/MnUI73UX71JaTfvoB5tgcnvY/B+W3YF/v82kxtQ0vdX/a76ssJNw1DbwLt7SE0cR9/v72FdOoWikIc8mWC9DUqhV30hD0yfPDxhuqbA7TEBB78voOthwfYe3yA5Mvvcfflj3iR2oOajn+aoXJMhsI2Hh0nkXj2DIknjxA/eoivjh7j+V930ElvoXP6CYbaySEU6TZSmS2c57bwTy6Oc4GJXW+jm91F991HGrKitGnIjkTKf0vnb2CJh1w2XQ8LdzDI7KLzoSGvlnxOOIZGVe4eJ6C/2eHSXieovbNoE92fcRjv7vNlg81ls/mGKAzg6jI8s/afDGrr1YUqXK5Rx2xldNfWYRRFcy3MZ/+jqz7XvhSWGCalx9KQFBIlF33HIZsGpYrw9RHCFz8g/HUX0eefIfplGz49sxZptUwbhxKiT9kW0MceBswoXBd7wdRFaCgI60WEpTSCVz/Dz57AJ1SWlSwfWaTxtDFbLYwokgYUYXa5jAklhjuZzEXhyzWZwvVpbsMILBKafQdCpU5G5iKJVtKmryoY5/MYCgJ8wmeUAZkt6VZpA5ZAEQ9bQZCIyOGFCFZGFtObDViZNCwhB7t4yc+WKGA86GNCGTkhwgm9YLIgZkTliox6o8mJ3JXnTLGBqmIsinzYbqOOMe0rXr/Hq705n0EY8krKtL+0FXW+bjf+E9Mbc8JBLgunViNCAQ7FPadbefMVISteqVzlhIz2ZkJJwpCG6ZIhI+TV3pw/RsjmkA5m1mi2rq8IRmjQTuaQoV0uwcpmiE5em7dNQjZvakdDJieiVKEvx5tuENJuxwgZ3Yh2NZeK9CFCJvbtdnUDWapyrd7kVV4jNInQpqI4NXk5H8v1d4PY7qjTQs4XiqjKNd5eff4vE5Ka/A6hyHoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Screenshot of Chrome DevTools &gt; Elements &gt; Computed&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2f6b9b41cfadb16613696e96a940262e/b9e4f/2019-12-04-computed-style.png&quot;
+        srcset=&quot;/static/2f6b9b41cfadb16613696e96a940262e/cf440/2019-12-04-computed-style.png 148w,
+/static/2f6b9b41cfadb16613696e96a940262e/d2d38/2019-12-04-computed-style.png 295w,
+/static/2f6b9b41cfadb16613696e96a940262e/b9e4f/2019-12-04-computed-style.png 590w,
+/static/2f6b9b41cfadb16613696e96a940262e/cb0d3/2019-12-04-computed-style.png 646w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;&lt;/section&gt;
+&lt;section&gt;&lt;h2&gt;Rendered Fonts&lt;/h2&gt;&lt;p&gt;使用 &lt;code class=&quot;language-text&quot;&gt;getComputedStyle&lt;/code&gt; 只能得到实际使用的 CSS 属性值，有时候并不能准确表达实际真实使用的具体字体类型。&lt;/p&gt;&lt;p&gt;举例来说，一个 &lt;code class=&quot;language-text&quot;&gt;font-family&lt;/code&gt; 定义可能是：&lt;/p&gt;&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;Rubik&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    -apple-system&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;system-ui&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;BlinkMacSystemFont&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;PingFang SC&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;Segoe UI&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Roboto&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Oxygen&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;Ubuntu&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Cantarell&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Fira Sans&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Droid Sans&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;Helvetica Neue&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Helvetica&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Arial&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Hiragino Sans GB&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;Microsoft Yahei&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;WenQuanYi Micro Hei&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sans-serif；
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在如此众多的定义中，具体浏览器使用了哪一款字体，并不容易知道。这其中涉及到了大量的变量。用户使用的系统环境、字体下载情况、正在阅读的文字是中文还是英文等，这些都有可能影响到最终浏览器所选用的字体。甚至在不复杂的 &lt;code class=&quot;language-text&quot;&gt;font-family&lt;/code&gt; 设置下，最终的选用字体依然可能并不直观。举例来说，如果设置 CSS 为：&lt;code class=&quot;language-text&quot;&gt;font-family: system-ui&lt;/code&gt;，具体使用的字体并没有从设置的字段中直观的反馈出来。&lt;/p&gt;&lt;p&gt;Chrome DevTools 提供了一个 Rendered Fonts 功能，可以帮助开发者了解当前真实使用的字体。示意图如下：&lt;/p&gt;&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dc6b98d142218bfc4e588ffbe34ab2d0/26dcc/2019-12-04-rendered-fonts.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 538px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 187.36059479553904%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAlCAYAAABCr8kFAAAACXBIWXMAABYlAAAWJQFJUiTwAAAFB0lEQVRIx51WyW4bRxCdjw5yygfkB5KD7zkFCAIYQbwFgeEttixS3HeJ5HAdchbOvvLlVZMjUbJkC27goXt6ZqpreVXVWhAE2Gw26PV6GI1GGA6H0HUdnh9gZjj4XO/hvN5HpdHHYLyC4/pYr1YIwxDyr+d52O12sCxLydGWyyUGgwEmk4l6sd0YuLocot/voUohnaGO+cZFpTnEh/M2qvUWut0uqtUqarUarq6ulKDFYqGEa9vtVmk36PdhmhauZgZqrQEq9S7RRrM7xMa00e92UK9dUFgHrVZLCRSMx2Ol3Ypa+74PLc9zlCPNcpgB4EQH7GLAljks8NAoigJZll3Pmmzu93tCrbAvMs65Whd5gjyLOadI0+QWkkSQqn9Ph3YQdtiUE1zXw2K1wehqBj/kT+keYZwjIuK0QJwckGYFgxJSeIobpfY3GsoQ813XRaf+Bp/fP8V08B/MRQ3bWRXm/AIW1/JsLWswZnX4DEKaZTiVcUug+MG2LTjT59Dbf6BX+R3R6iUK818k65dIN6+QGv8g5+zpTxlEg0oUDwvMRaBlwtFfIfaXGF1ekgFdzGa68qP4MxP/RQ682QtY5gbZ1wQWxZ4UOAiMfAMrw8RkqqM/GMFxdjBJDz+IKNA7CvyGhiJwu93AHL9A6K4YkAxbc0vyjrE2eMB6Ta4FCDybbnnGJFg9wmT60J6+Qp44KsLCzYwRTdJyZoSTEO7s5eNNdvVn2NtvkFsfUNgfkJrvkJnvkXOtYL1FMP/r2yYfaLODMT2DM38He0ZwtvS3CuqZkHfG5D1z36HW+W2Bd4kdhpEyL4i4FsQZCZ4iIGQdHvfjhGSPoq8TW+YojhETScI5KdfJzd7JHFKgcPcLDcsNeVme9BjcNzQpkpZpImLBFB+K2QK1Vs/59b7MYqJAtJYia9ukkOOolBVoATcnrNA+1T+q+mCpuquVPM/nM2bSTNVDg1zVRGrIhT+dIuBJEUuSaCsOP4VYIi5pt9t4/fo1ib7BJQlv2w7Jb1LgmpSzoRlkv91swm2werD6xqy6ydGkU0gQZEi1/vvZc3S6fZWWko4GW4BkkgjXXPYRj/0jYAvwW01E1DSnQIFoJH4rISa6no/Fco2pPlN7KsongdWkg1ntFmz2ix2ri/nxI6xKBTtqGx5NLRHHkTKt0WxTwx5anS4Lx1AV5fIbRZuc2ZFRdcGpw++jSRwnLBKG4ut932oBfebQ0Q59s2P3c6Wdsk0GrMaioVCj7MHiS302R6PVVi2z3C+/EWgZfeV3OtidfYLXaChfevUaYgYr54klL7NjqZ/Pl8rkIs9v8baEllB1f0Q/NBvwhwNWkTmCxRwhfZsKkZPkmsgSgDUPavaGvFn41yQ/hSacC8ijgA0/pBkxT4n4QuGEj2J+HAbYRTHmrRqW0wn34i/4eqg2pXPvOPh2Rz9eCFYT4O2fN1l1ty/jUeP4U+gBv/0MRMGDX2oWk1vYLrMwXa2ZQnJxKqMoDT0MfGS//ICw9g4iLjhG+S60erOFT2fn+Fyp4rxygWa7g8pFDbV6U1Vvhwfs2EeSX39E/OQn2BTmsHE5PFCqjKUUuIEmoV6S/XNexwTS2URbOU0iqa541NhsVeCy38heeSf074m0un1VLuoqjc7Oq7igZv3hSHFMTB9djjEYXmKoL7DZmtiwCMxJLYFJdnzhw/1X6t+jwnUnPbXvLf8PtQHte4Q8BFHqf1USFQCODxGiAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Screenshot of Chrome DevTools &gt; Elements &gt; Computed &gt; Rendered Fonts&quot;
+        title=&quot;&quot;
+        src=&quot;/static/dc6b98d142218bfc4e588ffbe34ab2d0/26dcc/2019-12-04-rendered-fonts.png&quot;
+        srcset=&quot;/static/dc6b98d142218bfc4e588ffbe34ab2d0/cf440/2019-12-04-rendered-fonts.png 148w,
+/static/dc6b98d142218bfc4e588ffbe34ab2d0/d2d38/2019-12-04-rendered-fonts.png 295w,
+/static/dc6b98d142218bfc4e588ffbe34ab2d0/26dcc/2019-12-04-rendered-fonts.png 538w&quot;
+        sizes=&quot;(max-width: 538px) 100vw, 538px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;&lt;p&gt;Chrome 会将当前选中元素真实使用的所有字体都列出来。需要注意两点：&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;需要选中一个有文字内容的元素，不然这里并不会显示；&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选中的文字内容可能需要多种字体类型共同配合渲染，Chrome 会讲所有用到的元素都列举出来。&lt;/p&gt;
+&lt;p&gt;比如，&lt;code class=&quot;language-text&quot;&gt;笑，😊，smile&lt;/code&gt; 这样一段文字，在 MacOS Chrome 下，默认就需要以下三种字体来进行渲染：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Times（渲染英文）&lt;/li&gt;
+&lt;li&gt;Songti SC（渲染中文）&lt;/li&gt;
+&lt;li&gt;Apple Color Emoji（渲染 emoji）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上三种字体在 Rendered Fonts 中都会被列举出来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;Chrome 的 Blog 介绍可以查看&lt;a href=&quot;https://developers.google.com/web/updates/2013/09/DevTools-answers-What-font-is-that&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;这一方案暂时没有 JavaScript API 可以直接调用，无法在程序运行时进行自动的判断。&lt;/p&gt;&lt;/section&gt;</content:encoded></item><item><title><![CDATA[Cost of parsing JSON]]></title><link>https://laysent.github.iotil/2019/12#2019-122019-12-03</link><guid isPermaLink="false">https://laysent.github.iotil/2019/12#2019-122019-12-03</guid><pubDate>Tue, 03 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;在 JavaScript 中，直接定义一个对象（Object），性能上不远如定义一个 &lt;code class=&quot;language-text&quot;&gt;JSON.parse()&lt;/code&gt; 的表达式。具体来说，下面的两行，&lt;code class=&quot;language-text&quot;&gt;JSON.parse&lt;/code&gt; 的表达式会有更好的性能表现：&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; slow &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; foo&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; bar&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1337&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; fast &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;{&quot;foo&quot;:42,&quot;bar&quot;:1337}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;同样的效果，但是在 JavaScript 引擎中的表现却差别很大。根据&lt;a href=&quot;https://github.com/GoogleChromeLabs/json-parse-benchmark&quot;&gt;这里&lt;/a&gt;给出的测试数据，&lt;code class=&quot;language-text&quot;&gt;JSON.parse&lt;/code&gt; 的速度是直接写对象速度的 1.7 倍。而且这不仅仅只是 V8 表现上的不同，在各类 JavaScript 引擎上都有类似的表现，性能差异均非常明显（&lt;a href=&quot;https://developer.apple.com/documentation/javascriptcore&quot;&gt;JavaScriptCore&lt;/a&gt; 的性能差异可以到两倍）。&lt;/p&gt;
