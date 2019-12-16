@@ -34,6 +34,7 @@
 <url> <loc>https://laysent.github.io/til/2019/07</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019/06</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019/05</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/2019-12-16_find-input-code</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-12-15_react-capture-event</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-12-12_git-diff-filenames</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-12-11_apply-git-patch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -189,6 +190,7 @@
 <url> <loc>https://laysent.github.io/til/2019-05-03_restore-source-map</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-05-02_webpack-dynamic-import</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/2019-05-01_use-case-of-switch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://laysent.github.io/til/category/macos</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/typescript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -208,7 +210,6 @@
 <url> <loc>https://laysent.github.io/til/category/vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/sqlite</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/service</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://laysent.github.io/til/category/macos</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/til/category/configuration</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://laysent.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
